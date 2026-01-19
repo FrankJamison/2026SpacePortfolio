@@ -5744,6 +5744,10 @@ body.minimal {
     background-position: top
 }
 
+.space-hero-bg {
+    background-image: url('assets/images/space.jpg')
+}
+
 .btn {
     -webkit-transition: all .2s linear;
     -o-transition: all .2s linear;
