@@ -14,3 +14,6 @@ pyvenv.cfg
 
 # App data
 database.txt
+
+# Backup of old git metadata (do not commit)
+.git_backup_before_spaceportfolio/
