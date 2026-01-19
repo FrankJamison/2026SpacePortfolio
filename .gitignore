@@ -1,0 +1,16 @@
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# Workspace virtual environment artifacts (as requested)
+Include/
+Lib/
+Scripts/
+var/
+pyvenv.cfg
+
+# App data
+database.txt

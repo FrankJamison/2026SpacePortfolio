@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}">
+    <link href="{{ url_for('static', filename='assets/favicon.ico') }}" rel="icon">
+
+    <title>Questkeeper: A Classic D&D Character Tracker</title>
+
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    <!-- Add your content of header -->
+    <header>
+        <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="{{ url_for('page') }}" title="">01 : Home</a></li>
+                        <li><a href="{{ url_for('page', page_name='works') }}" title="">02 : Works</a></li>
+                        <li><a href="{{ url_for('page', page_name='about') }}" title="">03 : About me</a></li>
+                        <li><a href="{{ url_for('page', page_name='contact') }}" title="">04 : Contact</a></li>
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right navbar-small visible-md visible-lg">
+                        <li><a href="{{ url_for('page', page_name='work-01') }}">001</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-02') }}" class="active">002</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-03') }}">003</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-04') }}">004</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-05') }}">005</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-06') }}">006</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="{{ url_for('static', filename='assets/images/work001-01.jpg') }}" class="img-responsive" alt="">
+                    <div class="card-container">
+                        <div class="text-center">
+                            <h1 class="h2">002</h1>
+                        </div>
+                        <div class="text-center">
+                            <h2>Questkeeper:<br>A Classic D&D Character Tracker</h2>
+                        </div>
+                        <p>Some projects chase trends. QuestKeeper sharpened its sword, packed its rations, and walked the road the long way—by design.</p>
+                        <p>Built in 2018 as a full-stack PHP and MySQL web application, QuestKeeper is a Dungeons & Dragons 5e character tracker that embraces traditional web fundamentals. No modern frameworks. No scaffolding magic. Just sessions, SQL, structured includes, and deliberate logic layered one piece at a time. It’s a utility app first, a portfolio statement second—and that order matters.</p>
+                        <p>For employers, developers, and recruiters, QuestKeeper demonstrates something increasingly rare: someone who understands <em>how the web actually works.</em></p>
+
+                        <h3>What QuestKeeper Does</h3>
+                        <p>QuestKeeper allows users to register, authenticate, and manage D&D 5e characters inside a protected member area. Each character sheet stores ability scores, skills, saving throws, proficiencies, and level-based statistics, all persisted in a relational database and dynamically rendered in the browser.</p>
+                        <p>This is not a static demo or mockup. It is a functional, stateful application with real users, real data, and real rules.</p>
+
+                        <h3>Application Structure &amp; Architecture</h3>
+                        <p>The project follows a clean, conventional PHP structure that prioritizes clarity and maintainability:</p>
+                        <ul>
+                            <li>Shared logic and configuration live in a dedicated includes/ directory</li>
+                            <li>Environment-specific database credentials are abstracted and excluded from version control</li>
+                            <li>Constants and helper functions are centralized</li>
+                            <li>Public pages and protected routes are clearly separated</li>
+                        </ul>
+                        <p>The layout reflects a disciplined approach to server-side development—one that scales mentally before it scales technically.</p>
+
+                        <h3>Authentication &amp; Session Control</h3>
+                        <p>QuestKeeper implements a complete authentication flow:</p>
+                        <ul>
+                            <li>User registration and login</li>
+                            <li>Session initialization and teardown</li>
+                            <li>Access control for protected pages</li>
+                            <li>Server-side validation and error handling</li>
+                        </ul>
+                        <p>Passwords are hashed using MD5, which is openly documented in the README as a legacy choice reflective of the project’s era. Importantly, the documentation also explains how modern hashing (password_hash) would replace it today. That transparency signals awareness, not oversight.</p>
+
+                        <h3>Database Design &amp; Data Flow</h3>
+                        <p>At its core, QuestKeeper is a thoughtfully constructed CRUD application:</p>
+                        <ul>
+                            <li>Character data is stored relationally</li>
+                            <li>SQL queries are structured, readable, and purpose-built</li>
+                            <li>Reusable database functions handle persistence</li>
+                            <li>Character creation, retrieval, updates, and deletion are fully implemented</li>
+                        </ul>
+                        <p>The schema supports the layered complexity of a D&D character sheet without becoming brittle or overengineered—a balance that takes experience to strike.</p>
+
+                        <h3>Rules-Driven Character Logic</h3>
+                        <p>D&D character sheets are rule engines in disguise, and QuestKeeper treats them accordingly.</p>
+                        <ul>
+                            <li>Ability modifiers are calculated dynamically from base stats</li>
+                            <li>Skill bonuses combine modifiers and proficiency bonuses</li>
+                            <li>Saving throws reflect class proficiencies</li>
+                            <li>Proficiency bonuses scale automatically with character level</li>
+                        </ul>
+                        <p>These calculations are handled in dedicated PHP includes, keeping business logic isolated, readable, and testable. The code reflects a real understanding of the D&D 5e ruleset—not just the math, but the intent behind it.</p>
+
+                        <h3>Dynamic Updates with AJAX</h3>
+                        <p>QuestKeeper enhances usability without abandoning server-rendered principles:</p>
+                        <ul>
+                            <li>Character data loads dynamically</li>
+                            <li>Updates occur without full page reloads</li>
+                            <li>JSON responses keep client-side logic lightweight</li>
+                        </ul>
+                        <p>This hybrid approach delivers responsiveness while preserving clarity—proof that interactivity doesn’t require a JavaScript framework to be effective.</p>
+
+                        <h3>Interface &amp; Front-End Choices</h3>
+                        <p>The UI favors function over flash:</p>
+                        <ul>
+                            <li>Form-driven layouts modeled after traditional character sheets</li>
+                            <li>Straightforward CSS focused on readability</li>
+                            <li>Bootstrap used pragmatically to accelerate layout consistency</li>
+                        </ul>
+                        <p>The result is an interface that feels like a tool, not a toy—exactly what a character manager should be.</p>
+
+                        <h3>Operational &amp; Portfolio Maturity</h3>
+                        <p>Several quiet details elevate the project:</p>
+                        <ul>
+                            <li>Example configuration files instead of hard-coded secrets</li>
+                            <li>Dedicated PHP error logging for debugging</li>
+                            <li>Clear README documentation explaining scope and limitations</li>
+                            <li>Conscious framing as a portfolio artifact rather than a production claim</li>
+                        </ul>
+                        <p>These choices demonstrate professional restraint and an understanding of real-world development constraints.</p>
+
+                        <h3>Why QuestKeeper Still Matters</h3>
+                        <p>QuestKeeper doesn’t rely on buzzwords to impress. It demonstrates foundational competence where it counts:</p>
+                        <ul>
+                            <li>HTTP request lifecycles</li>
+                            <li>Session management</li>
+                            <li>Relational data modeling</li>
+                            <li>Business logic separation</li>
+                            <li>Incremental enhancement</li>
+                        </ul>
+                        <p>For recruiters and employers, this project shows someone who can build systems—not just assemble interfaces.<br>For developers, it’s a reminder that strong fundamentals age better than trends.</p>
+                        <p>QuestKeeper is classic for a reason.<br>Every stat is earned. Every rule is respected.<br>And nothing here rolled with advantage it didn’t deserve.</p>
+                    </div>
+
+
+
+                    <div class="col-md-8 col-md-offset-2 section-container-spacer">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <a href="https://questkeeper.fcjamison.com" target="_blank"><img src="{{ url_for('static', filename='assets/images/work02-hover.png') }}" class="img-responsive" alt=""></a>
+                                <p>QuestKeeper (2018)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-container text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>© 2026 Frank Jamison</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                navActivePage();
+            });
+        </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+-->
+        <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>

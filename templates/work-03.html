@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/apple-icon-180x180.png') }}">
+    <link href="{{ url_for('static', filename='assets/favicon.ico') }}" rel="icon">
+
+    <title>D&D5eTools.com: Practical Utilities, Built with Intent</title>
+
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+</head>
+
+<body class="">
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
+    <!-- Add your content of header -->
+    <header>
+        <nav class="navbar  navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav ">
+                        <li><a href="{{ url_for('page') }}" title="">01 : Home</a></li>
+                        <li><a href="{{ url_for('page', page_name='works') }}" title="">02 : Works</a></li>
+                        <li><a href="{{ url_for('page', page_name='about') }}" title="">03 : About me</a></li>
+                        <li><a href="{{ url_for('page', page_name='contact') }}" title="">04 : Contact</a></li>
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right navbar-small visible-md visible-lg">
+                        <li><a href="{{ url_for('page', page_name='work-01') }}">001</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-02') }}">002</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-03') }}" class="active">003</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-04') }}">004</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-05') }}">005</a></li>
+                        <li><a href="{{ url_for('page', page_name='work-06') }}">006</a></li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="section-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="{{ url_for('static', filename='assets/images/work001-01.jpg') }}" class="img-responsive" alt="">
+                    <div class="card-container">
+                        <div class="text-center">
+                            <h1 class="h2">003</h1>
+                        </div>
+                        <div class="text-center">
+                            <h2>D&D5eTools.com:<br>Practical Utilities, Built with Intent</h2>
+                        </div>
+                        <p>Some projects exist to show off.<br>Others exist to <em>work</em>.</p>
+                        <p><strong>D&D5eTools.com</strong> firmly belongs to the second camp—and that’s exactly the point. This is a deliberately framework-free, static web application built to solve real tabletop problems for Dungeons & Dragons 5e players and Dungeon Masters. No React. No build pipeline. No dependency graph threatening to achieve sentience. Just HTML, CSS, and JavaScript doing what they’ve always done best when treated with respect.</p>
+                        <p>For employers, recruiters, and developers, this project is a quiet but confident demonstration of fundamentals: architectural clarity, readable logic, scalable structure, and the discipline to stop adding features when the problem is already solved.</p>
+
+                        <h3>What the Project Actually Is</h3>
+                        <p>At its core, D&D5eTools.com is a collection of focused utilities designed to be used at the table—not admired in a portfolio slideshow and forgotten. Each tool addresses a specific friction point in 5e character creation and prep, and each is intentionally narrow in scope.</p>
+                        <p>There are three primary components:</p>
+
+                        <h4>Ability Score Generator</h4>
+                        <p>Implements the classic 4d6, drop-the-lowest method in a way that is transparent, predictable, and rule-faithful. Dice rolls are explicit. Calculations are readable. Nothing is hidden behind abstractions that would make a rules-lawyer suspicious.</p>
+
+                        <h4>Physical Stat Generator</h4>
+                        <p>Age, height, and weight generation based on race-specific rules, implemented using parsed dice expressions on the client side. This isn’t random fluff—it’s encoded rule logic, translating book tables into deterministic JavaScript behavior that mirrors tabletop expectations.</p>
+
+                        <h4>Pre-Generated Character Gallery</h4>
+                        <p>A static, filterable character gallery that links portraits and PDFs through deterministic naming conventions. No database. No API. Characters scale by adding files, not rewriting code. This is content-driven architecture in its simplest and most durable form.</p>
+
+                        <p>Each tool stands alone, yet the site feels cohesive—because the structure underneath it is.</p>
+
+                        <h3>Design Philosophy: Calm, Structured, and Boring on Purpose</h3>
+                        <p>The visual design of D&D5eTools.com makes a conscious decision: clarity over flash.</p>
+                        <p>Typography favors readability. Layouts are predictable and consistent. Components repeat with purpose, not laziness. The UI isn’t trying to compete with character art or dice trays—it exists to stay out of the way while players make decisions.</p>
+                        <p>Shared elements like headers and footers are abstracted into reusable HTML fragments, reducing duplication and enforcing consistency across pages. This keeps the site maintainable without introducing templating engines or build tools that would complicate deployment for a project that doesn’t need them.</p>
+                        <p>CSS is organized by responsibility rather than novelty. Global styles handle structure and typography, while tool-specific rules live where they belong. There’s no cascade chaos, no mystery overrides, and no “temporary” rules that somehow survived three refactors.</p>
+                        <p>It’s a design that respects the user’s time—and the next developer’s sanity.</p>
+
+                        <h3>JavaScript Without the Safety Net (And Why That Matters)</h3>
+                        <p>This project intentionally avoids frameworks, which means the JavaScript has nowhere to hide.</p>
+                        <p>Logic is broken into small, single-purpose modules. Dice rolling, data parsing, and generation logic live separately from DOM rendering. UI updates are explicit. State is managed directly, not smuggled through lifecycle hooks or magic bindings.</p>
+                        <p>Functions are named clearly. Inputs and outputs are obvious. Side effects are controlled. You can open a file and understand what it does without reverse-engineering an ecosystem.</p>
+                        <p>This approach demonstrates something increasingly rare: confidence in core JavaScript. Not nostalgia—<em>competence</em>. It’s proof that I understand what frameworks abstract away, because I’ve built the layers myself.</p>
+
+                        <h3>Static Doesn’t Mean Simple</h3>
+                        <p>One of the most telling aspects of D&D5eTools.com is how it scales without pretending to be a full-stack application.</p>
+                        <p>Characters, images, and PDFs follow predictable naming and directory conventions. Add new assets, and they’re automatically picked up by the existing logic. There’s no configuration file to update, no schema to migrate, and no brittle glue code waiting to break.</p>
+                        <p>This is scalability through discipline rather than infrastructure. It’s the kind of thinking that comes from understanding that not every problem benefits from a backend—and that overengineering is still engineering debt.</p>
+
+                        <h3>Compatibility, Longevity, and Real-World Use</h3>
+                        <p>The project includes shims and defensive coding where appropriate to maintain compatibility across environments. That choice is intentional. Real users don’t all run the latest browser, and real utility sites should degrade gracefully instead of failing loudly.</p>
+                        <p>This isn’t bleeding-edge JavaScript chasing novelty. It’s stable, portable code meant to last. The kind of code you can revisit years later without needing a migration guide and a support group.</p>
+
+                        <h3>What This Project Signals to Employers</h3>
+                        <p>D&D5eTools.com demonstrates:</p>
+                        <ul>
+                            <li>Strong command of HTML, CSS, and JavaScript fundamentals</li>
+                            <li>Thoughtful separation of concerns without frameworks</li>
+                            <li>Clean, maintainable UI composition</li>
+                            <li>Data-driven logic implemented client-side</li>
+                            <li>Scalable content architecture without unnecessary infrastructure</li>
+                            <li>Good judgment about when <em>not</em> to add complexity</li>
+                        </ul>
+                        <p>Most importantly, it shows intent. Every choice here is deliberate. Nothing is accidental. Nothing is cargo-culted.</p>
+
+                        <h3>Final Word</h3>
+                        <p>D&D5eTools.com isn’t flashy, and it isn’t trying to be. It’s confident, restrained, and built to last—like a well-balanced character sheet that doesn’t need homebrew patches to function.</p>
+                        <p>If you’re looking for proof that I can design and build practical, maintainable web tools without leaning on a framework as a crutch, this project makes the case quietly—and lets the work speak for itself.</p>
+                        <p>No glitter.<br>No overengineering.<br>Just solid tools, rolling straight down the middle.</p>
+                    </div>
+
+
+
+                    <div class="col-md-8 col-md-offset-2 section-container-spacer">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <a href="https://www.dnd5etools.com" target="_blank"><img src="{{ url_for('static', filename='assets/images/work03-hover.png') }}" class="img-responsive" alt=""></a>
+                                <p>DnD5eTools.com (2021)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer-container text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>© 2026 Frank Jamison</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                navActivePage();
+            });
+        </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+</script>
+
+-->
+        <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
