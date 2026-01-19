@@ -116,6 +116,23 @@ This project deliberately uses a simple persistence approach:
 - If a submission write fails, `/submit_form` returns a 500 with a message.
 - Otherwise, it redirects to the thank-you page.
 
+### Contact form email delivery (SMTP)
+The contact form can also send you an email notification via SMTP (in addition to saving to the instance files).
+
+Configure these environment variables on your host:
+
+- `CONTACT_SMTP_HOST` (default: `mail.fcjamison.com`)
+- `CONTACT_SMTP_PORT` (default: `587`)
+- `CONTACT_SMTP_USER` (required)
+- `CONTACT_SMTP_PASSWORD` (required)
+- `CONTACT_MAIL_FROM` (default: `CONTACT_SMTP_USER`)
+- `CONTACT_MAIL_TO` (default: `CONTACT_SMTP_USER`)
+- `CONTACT_SMTP_USE_STARTTLS` (default: `true`)
+
+Notes:
+- The outgoing message uses `CONTACT_MAIL_FROM` as the sender and sets `Reply-To` to the visitor’s typed email.
+- This avoids spoofing issues on servers that reject arbitrary `From` addresses.
+
 ---
 
 ## Front-end & design notes
