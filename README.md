@@ -5,7 +5,7 @@ Hi — I’m Frank Jamison. This repo is my personal portfolio site built with P
 It’s intentionally simple and fast: a small Flask server renders HTML templates, serves a compiled front-end bundle, and includes a working contact form that writes messages to a lightweight “database” file for easy review.
 
 - Live site: https://2026pythonportfolio.fcjamison.com/
-- Local dev: http://127.0.0.1:5000/
+- Local dev: http://127.0.0.1:30001/
 
 ---
 
@@ -102,7 +102,7 @@ If a template doesn’t exist, the server returns a 404.
   - Handles contact form submission
   - Writes contact submissions into the instance data directory
 - `dev_server.py`
-  - Runs the app locally with `debug=True` on `127.0.0.1:5000`
+  - Runs the app locally with `debug=True` on `127.0.0.1:30001`
 - `wsgi.py`
   - Production entrypoint for Gunicorn (`gunicorn wsgi:app`)
 
@@ -174,7 +174,7 @@ If you are using the repo’s virtual environment:
 3. Start the dev server:
    - `python dev_server.py`
 4. Open:
-   - http://127.0.0.1:5000/
+  - http://127.0.0.1:30001/
 
 ---
 
@@ -183,8 +183,10 @@ If you are using the repo’s virtual environment:
 This project is set up for a standard WSGI deployment.
 
 - Entrypoint: `wsgi:app`
-- Example:
-  - `gunicorn wsgi:app`
+- Example (bind to port 30001):
+  - `gunicorn --bind 0.0.0.0:30001 wsgi:app`
+- Example (recommended: config + supports `$PORT`):
+  - `gunicorn -c gunicorn.conf.py wsgi:app`
 
 Notes:
 - The app writes contact submissions to the instance directory at runtime.
